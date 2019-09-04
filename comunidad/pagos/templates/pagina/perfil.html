@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+
+
+{% load static %}
+
+{% block title %}Perfil Socio{% endblock %}
+
+{% block content %}
+{% include 'base/nav.html' %}
+<div class="container">
+   <div class="jumbotron">
+       <h1 class="display-4">Perfil Socio  N° {{ user.profile.numsocio }} {{ user.username }}</h1>
+       <p class="lead">Fecha registro {{ user.date_joined }}</p>
+       <p class="lead">Ultima visita portal {{ user.last_login }}</p>
+       <hr class="my-2">
+       <p><strong>Nombre: </strong>{{ user.profile.get_nombre_completo}}</p>
+       <p><strong>Direccion: </strong> {{ user.profile.direccion }} </p>
+       <p><strong>Comuna: </strong> {{ user.profile.comuna }} </p>
+       <p><strong>Telefono: </strong> {{ user.profile.telefono }} </p>
+       <p><strong>Celular: </strong> {{ user.profile.celular }} </p>
+       <p><strong>Email: </strong> {{ user.profile.email }} </p>
+       <p><strong>Cumpleaños: </strong> {{ user.profile.cumple }} </p>
+       <p><strong>Valoracion: </strong> {{ user.profile.valoracion }} </p>
+       <p><strong>Acerca de mi: </strong> {{ user.profile.bio }} </p>
+       <p><strong>Foto: </strong> {{ user.profile.foto }} </p>
+   </div>
+</div>
+
+{% endblock content %}

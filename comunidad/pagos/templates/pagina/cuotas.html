@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}Lista Cuotas{% endblock %}
+
+{% block content %}
+
+{% include 'base/nav.html' %}
+
+        <div class="jumbotron">
+                {% if cuotas %}
+                <div class="container">
+                        <div class="row text-center">
+                          <div class="col">
+                                <h1 class="text-center">Listado Cuotas del Socio {{ user.username }}</h1>
+                                <h1>&nbsp;</h1>
+                          </div>
+                        </div>
+                </div>
+                <div class="table-responsive-lg table-bordered table-striped ">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>socio</th>
+                                <th>cuota mes</th>
+                                <th>multa 1</th>
+                                <th>multa 2</th>
+                                <th>cuota 1</th>
+                                <th>cuota 2</th>
+                                <th>fecha publicacion</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            {% for listacuotas in cuotas %}
+                            <tr>
+                                <td>{{ listacuotas.socio }}</td>
+                                <td>{{ listacuotas.cuotames }}</td>
+                                <td>{{ listacuotas.multa1 }}</td>
+                                <td>{{ listacuotas.multa2 }}</td>
+                                <td>{{ listacuotas.cuota1 }}</td>
+                                <td>{{ listacuotas.cuota2 }}</td>
+                                <td>{{ listacuotas.fechapub }}</td>
+                            </tr>
+                            {% endfor %}
+            
+                            {% else %}
+                        <h1>No hay registros de cuotas</h1>
+                        {% endif %}
+                    </tbody>
+                </table> 
+                </div>                       
+        </div>
+        <h1>&nbsp;</h1>
+
+{% endblock %}}
+

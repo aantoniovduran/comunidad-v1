@@ -1,0 +1,65 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load pagos_tags %}
+{% block title %}Lista Pagos{% endblock %}
+
+
+
+{% block content %}
+{% include 'base/nav.html' %}
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <h1 class="text-center">Listado Pagos del Socio {{ user.username }}</h1>
+                </div>
+            </div>
+        </div>
+        <h1>&nbsp;</h1>
+        
+        <div class="card text-center">
+                <div class="card-header">
+                <h5>&nbsp;</h5>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ user.username }}</h5>
+                  <p class="card-text">{{ form.cuota }}</p>
+                </div>
+                <div class="card-footer text-muted">
+                        <h5>&nbsp;</h5>
+                </div>
+              </div>
+
+              <div class="table-responsive table-bordered table-striped">
+                    <table class="table table-xl">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>socio</th>
+                                <th>lista pagos</th>
+                                <th>fecha pago</th>
+                                <th>estado pago</th>
+                            </tr>
+        
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ user.username }}</td>
+                                <td>{{ form.cuota }}</td>
+                                <td>{{ form.fechapago }}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+    </div>
+    <h1>&nbsp;</h1>
+    <h1>&nbsp;</h1>
+
+
+
+   <p> {% pagos_counter %}</p>
+
+
+{% endblock %}

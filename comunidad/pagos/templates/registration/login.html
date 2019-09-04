@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title %}Inicie sesión{% endblock %}
+
+{% block content %}
+{% include 'base/na.html' %}
+
+<!-- Navigation -->
+<div class="container">
+        <h1 class="display-4">Acceso al sistema</h1>
+       
+            {% if user.is_authenticated %}
+            <div class="alert alert-success" role="alert">Hola {{ user.username }}!
+                        <button><a href="{% url 'perfil' %}">Mi Perfil</a></button>
+                        <button><a href="{% url 'logout' %}">Cerrar Sesión</a></button>
+        </div>
+           {% else %}
+        
+           <div class="alert alert-warning" role="alert"> Acceso solo usuarios registrados
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}      
+                    <button type="submit">Iniciar Sesión</button>                  
+                </form>
+              </div>
+            {% endif %}
+      
+
+{% endblock %}

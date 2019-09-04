@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+
+
+{% load static %}
+
+{% block title %}Acceso SYS{% endblock title %}
+
+  
+
+{% block content %}  
+{% include 'base/na.html' %}
+
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-8 mb-5">
+        <h2>Comunidad Ensueño</h2>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
+        <a class="btn btn-primary btn-lg" href="/accounts/login/">Acceso usuarios </a>
+      </div>
+      <div class="col-md-4 mb-5">
+        <h2>Hablemos</h2>
+        <hr>
+        <address>
+          <strong>Oficina Central</strong>
+          <br>Gran Avenida 3840
+          <br>Oficina 808, San Miguel
+          <br>Santiago - R.M
+          <br>
+        </address>
+        <address>
+          <abbr title="Telefono">Tel:</abbr>
+          +562 22759 6140
+          <br>
+          <abbr title="celular">Cel:</abbr>+569 82983855
+          <br>
+          <abbr title="Email">Email:</abbr>
+          <a href="mailto:#">lrojas@snabb-it.cl</a>
+        </address>
+      </div>
+    </div>
+    <!-- /.row -->
+
+
+{% endblock %}
